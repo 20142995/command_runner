@@ -332,8 +332,6 @@ class MainWindow(QMainWindow):
         # # 设置按钮样式
         # self.start_button.setStyleSheet("background-color: green;")
         # self.stop_button.setStyleSheet("background-color: gray;")
-        self.update_output.emit("$ \n")
-        logging.info('over')
     def update_output(self, text):
         # 获取当前颜色
         color = self.colors[self.current_color_index]
