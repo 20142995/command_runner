@@ -1,0 +1,59 @@
+IP信息:
+- name: Ping
+  command: ping -n 4 {target}
+- name: Traceroute
+  command: tracert {target}
+- name: NSLookup
+  command: nslookup {target}
+
+IP端口扫描:
+- name: nmap
+  command: nmap -p 80,443 {target}
+
+域名信息:
+- name: Whois
+  command: whois {target}
+
+子域名采集:
+- name: sublist3r
+  command: sublist3r -d {target}
+
+web指纹识别:
+- name: curl
+  command: curl -I {target}
+- name: xapp
+  command: xapp --silent -t {target}
+- name: ehole
+  command: ehole finger -u {target}
+- name: observer_ward
+  command: observer_ward -t {target}
+- name: hfinger
+  command: hfinger -u {target}
+- name: P1finger
+  command: P1finger -u {target}
+- name: whatweb
+  command: whatweb {target}
+
+web目录扫描:
+- name: dirb
+  command: dirb {target}
+- name: dirsearch
+  command: dirsearch -u {target} -o ./res.csv --format=csv
+- name: jjjjjjjjjjjjjs
+  command: jjjjjjjjjjjjjs {target}
+- name: URLFinder
+  command: URLFinder -u {target}
+- name: URLFinder-x
+  command: URLFinder-x -u {target}
+
+web漏洞扫描:
+- name: dddd
+  command: dddd -t {target} -npoc
+- name: nuclei
+  command: nuclei -target {target}
+- name: xray
+  command: xray webscan --browser-crawler {target}
+- name: Packer-Fuzzer
+  command: Packer-Fuzzer -u {target}
+- name: nikto
+  command: wsl nikto -host {target}
