@@ -5,24 +5,45 @@ IP信息:
   command: tracert {target}
 - name: NSLookup
   command: nslookup {target}
+- name: cdncheck
+  command: cdncheck -silent -i {target} -resp
+- name: iplookup
+  command: iplookup -silent -i {target}
 
 IP端口扫描:
 - name: nmap
   command: nmap -p 80,443 {target}
-
+- name: txportmap
+  command: txportmap -i {target}
+- name: naabu
+  command: naabu -silent -host {target}
 域名信息:
 - name: Whois
   command: whois {target}
+- name: dig
+  command: dig {target}
+- name: NSLookup
+  command: nslookup {target}
+- name: cdncheck
+  command: cdncheck -silent -i {target} -resp
 
 子域名采集:
-- name: sublist3r
-  command: sublist3r -d {target}
+- name: subfinder
+  command: subfinder -silent -d {target}
+- name: ksubdomain
+  command: ksubdomain enum --silent --domain {target}
+- name: oneforall
+  command: oneforall --target {target} run
+- name: Sublist3r
+  command: Sublist3r -d {target}
+- name: subDomainsBrute
+  command: subDomainsBrute {target}
 
 web指纹识别:
-- name: curl
-  command: curl -I {target}
+- name: httpx
+  command: httpx -m HEAD {target}
 - name: xapp
-  command: xapp --silent -t {target}
+  command: xapp --silent -t 
 - name: ehole
   command: ehole finger -u {target}
 - name: observer_ward
@@ -33,6 +54,13 @@ web指纹识别:
   command: P1finger -u {target}
 - name: whatweb
   command: whatweb {target}
+
+waf识别:
+- name: wafw00f
+  command: wafw00f {target}
+- name: identYwaf
+  command: identYwaf {target}
+
 
 web目录扫描:
 - name: dirb
@@ -57,3 +85,5 @@ web漏洞扫描:
   command: Packer-Fuzzer -u {target}
 - name: nikto
   command: wsl nikto -host {target}
+- name: vscan
+  command: vscan -host {target}
